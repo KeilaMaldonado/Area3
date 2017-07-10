@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        var div = $("div");
+        div.animate({bottom: '300px'}, "fast");
+        div.animate({left: '300px'}, "fast");
+        div.animate({bottom: '300px'}, "fast");
+        div.animate({fontSize: '7em'}, "fast");
+    });
+});
+</script>
+<style type="text/css">
+  body{
+    background: #d50000;
+  }
+</style>
+</head>
+<body>
+
+<button>Pulsa Aqui para iniciar una animacion</button>
+
+
+<div style="background:#95eb00;height:250px;width:400px;position:absolute;">Area 3</div>
+
+</body>
+</html>

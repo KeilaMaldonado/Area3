@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Propuesta de presupuesto para Venezuela'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Area',
+        colorByPoint: true,
+        data: [{
+            name: 'Salud',
+            y: 35
+        }, {
+            name: 'Educacion',
+            y: 30,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Alimentos',
+            y: 20
+        }, {
+            name: 'Seguridad',
+            y: 10
+        }, {
+            name: 'Ambiente',
+            y: 2.5
+        }, {
+            name: 'Deporte',
+            y: 2.5
+        }]
+    }]
+});
+		</script>
+	</body>
+</html>

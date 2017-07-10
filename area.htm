@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+<script src="https://code.highcharts.com/highcharts.src.js"></script><div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    title: {
+        text: 'Produccion automortriz en venezuela'
+    },
+    subtitle: {
+
+    },
+    xAxis: {
+        allowDecimals: false,
+        labels: {
+            formatter: function () {
+                return this.value; // clean, unformatted number for year
+            }
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Cantidad de vehiculos'
+        },
+        labels: {
+            formatter: function () {
+                return this.value;
+            }
+        }
+    },
+    tooltip: {
+        pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+    },
+    plotOptions: {
+        area: {
+            pointStart: 2010,
+            marker: {
+                enabled: false,
+                symbol: 'circle',
+                radius: 2,
+                states: {
+                    hover: {
+                        enabled: true
+                    }
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Toyota',
+        data: [1050, 1000, 950, 700, 650, 400, 300, 250, 200, 235]
+    }, {
+        name: 'Cherry',
+        data: [650, 690, 700, 680, 650, 530, 480, 370, 300, 270]
+    },{
+
+	        name: 'Venirauto',
+	        data: [450, 500, 600, 650, 540, 420, 320, 240, null, null]
+	    }]
+});
+		</script>
+	</body>
+</html>
